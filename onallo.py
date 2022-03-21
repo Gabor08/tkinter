@@ -1,8 +1,11 @@
 from tkinter import *
-ablak=tk()
+ablak=Tk()
 mezo1=Entry(ablak)
 mezo1.grid(row=0, column=2)
-mezo1felirat=Label(ablak, text="Első mező")
+mezo1felirat=Label(ablak, text="Első mező:")
 mezo1felirat.grid(row=0, column=1)
 mezo2=Entry(ablak)
-ablak.mainloop
+mezo2.grid(row=1, column=2)
+mezo2felirat=Label(ablak, text="Második mező:")
+mezo2felirat.grid(row=1, column=1)
+ablak.mainloop()
