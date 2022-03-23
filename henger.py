@@ -1,10 +1,17 @@
 from tkinter import *
 import math
-def terfogat():
+def szamitasok():
+    mezo3.delete(0, END)
+    mezo4.delete(0, END)
+    mezo5.delete(0, END)
     sugar=int(mezo1.get())
     magassag=int(mezo2.get())
-    terf=sugar*2*math.pi*magassag
-    mezo3.insert(0,"{:.2f}".format(terf) + " cm3")
+    terf=sugar**2*math.pi*magassag
+    mezo3.insert(0, "{:.2f}".format(terf)+" cm3")
+    vas=7.8*terf
+    mezo4.insert(0, "{:.2f}".format(vas)+" g")
+    fa=0.7*terf
+    mezo5.insert(0, "{:.2f}".format(fa)+" g")
 foablak=Tk()
 mezo1=Entry(foablak)
 mezo1.grid(row=0, column=1)
@@ -14,10 +21,18 @@ mezo2=Entry(foablak)
 mezo2.grid(row=1, column=1)
 mezo2felirat=Label(foablak, text="Magasság (cm):")
 mezo2felirat.grid(row=1, column=0)
-kiszamit=Button(foablak, text="Kiszámít", command=terfogat)
+kiszamit=Button(foablak, text="Kiszámít", command=szamitasok)
 kiszamit.grid(row=2, column=1)
 mezo3=Entry(foablak)
 mezo3.grid(row=3, column=1)
 mezo3felirat=Label(foablak, text="Térfogat:")
 mezo3felirat.grid(row=3, column=0)
+mezo4=Entry(foablak)
+mezo4.grid(row=4, column=1)
+mezo4felirat=Label(foablak, text="Vashenger:")
+mezo4felirat.grid(row=4, column=0)
+mezo5=Entry(foablak)
+mezo5.grid(row=5, column=1)
+mezo5felirat=Label(foablak, text="Fahenger:")
+mezo5felirat.grid(row=5, column=0)
 foablak.mainloop()
