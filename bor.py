@@ -11,6 +11,9 @@ def szamitasok():
     otodikmezo.insert(0, "{:.0f}".format(liter)+" l")
     if bor>liter:
         negyedikmezo.insert(0, "Túl sok a bor.")
+    else:
+        mennyimeg=liter-bor
+        negyedikmezo.insert(0, "{:.0f}".format(mennyimeg)+" l")
 elsomezo=Entry(foablak)
 elsomezo.grid(row=0, column=1)
 elsomezofelirat=Label(foablak, text="Bor mennyisége (l): ")
