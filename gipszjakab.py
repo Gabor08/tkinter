@@ -6,7 +6,7 @@ def ujablak():
     gomb2=Button(ablak, text="Kilépés", command=ablak.destroy)
     uzenet.pack()
     gomb2.pack()
-    ablabk.mainloop()
+    ablak.mainloop()
 szoveg=Label(foablak, text="Kattints a gombra!")
 szoveg.pack()
 gomb1=Button(foablak, text="Névjegy", command=ujablak)
