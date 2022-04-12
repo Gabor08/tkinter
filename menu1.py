@@ -1,5 +1,6 @@
 from tkinter import *
 foablak=Tk()
+foablak.minsize(width=300, height=100)
 def nevjegy():
     ablak=Toplevel(foablak)
     uzenet=Message(ablak, text="Készítette: Gipsz Jakab\nPiripócs\n2009.06.04", width=300)
@@ -12,9 +13,12 @@ def felszin():
         a=int(amezo.get())
         b=int(bmezo.get())
         c=int(cmezo.get())
-        felszin=2*(a*b+b*c+c*a)
         mezo.delete(0, END)
-        mezo.insert(0, str(felszin))
+        felszin=2*(a*b+b*c+c*a)
+        if a>0 and b>0 and c>0:
+            mezo.insert(0, str(felszin))
+        else:
+            mezo.insert(0, "Nem lehet mínusz vagy 0 az éle.")
     ablak=Toplevel(foablak)
     amezo=Entry(ablak)
     amezo.grid(row=0, column=1)
@@ -41,7 +45,10 @@ def terfogat():
         c=int(cmezo.get())
         terfogat=a*b*c
         mezo.delete(0, END)
-        mezo.insert(0, str(terfogat))
+        if a>0 and b>0 and c>0:
+            mezo.insert(0, str(terfogat))
+        else:
+            mezo.insert(0, "Nem lehet mínusz vagy 0 az éle.")
     ablak=Toplevel(foablak)
     amezo=Entry(ablak)
     amezo.grid(row=0, column=1)
