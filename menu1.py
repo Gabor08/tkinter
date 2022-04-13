@@ -11,13 +11,13 @@ def nevjegy():
     ablak.mainloop()
 def felszin():
     def szamitas():
-        a=int(amezo.get())
-        b=int(bmezo.get())
-        c=int(cmezo.get())
+        a=eval(amezo.get())
+        b=eval(bmezo.get())
+        c=eval(cmezo.get())
         mezo.delete(0, END)
         felszin=2*(a*b+b*c+c*a)
         if a>0 and b>0 and c>0:
-            mezo.insert(0, int(felszin))
+            mezo.insert(0, str(felszin))
         else:
             mezo.insert(0, "Nem lehet mínusz vagy 0 az éle.")
     ablak=Toplevel(foablak)
@@ -41,13 +41,13 @@ def felszin():
     mezofelirat.grid(row=4, column=0)
 def terfogat():
     def szamitas():
-        a=int(amezo.get())
-        b=int(bmezo.get())
-        c=int(cmezo.get())
+        a=eval(amezo.get())
+        b=eval(bmezo.get())
+        c=eval(cmezo.get())
         terfogat=a*b*c
         mezo.delete(0, END)
         if a>0 and b>0 and c>0:
-            mezo.insert(0, int(terfogat))
+            mezo.insert(0, str(terfogat))
         else:
             mezo.insert(0, "Nem lehet mínusz vagy 0 az éle.")
     ablak=Toplevel(foablak)
@@ -71,12 +71,12 @@ def terfogat():
     mezofelirat.grid(row=4, column=0)
 def hengerterfogat():
     def szamitas():
-        sugar=int(amezo.get())
-        magassag=int(bmezo.get())
+        sugar=eval(amezo.get())
+        magassag=eval(bmezo.get())
         terf=sugar**2*math.pi*magassag
         mezo.delete(0, END)
         if sugar>0 and magassag>0:
-            mezo.insert(0, "{:.2f}".format(int(terf)))
+            mezo.insert(0, "{:.2f}".format(terf))
         else:
             mezo.insert(0, "Nem lehet mínusz vagy 0 sem a magasság, sem a sugár.")
     ablak=Toplevel(foablak)
@@ -96,12 +96,12 @@ def hengerterfogat():
     mezofelirat.grid(row=3, column=0)
 def hengerfelszin():
     def szamitas():
-        sugar=int(amezo.get())
-        magassag=int(bmezo.get())
+        sugar=eval(amezo.get())
+        magassag=eval(bmezo.get())
         felszin=(2*sugar**2*math.pi)+(2*sugar*math.pi*magassag)
         mezo.delete(0, END)
         if sugar>0 and magassag>0:
-            mezo.insert(0, "{:.2f}".format(int(felszin)))
+            mezo.insert(0, "{:.2f}".format(felszin))
         else:
             mezo.insert(0, "Nem lehet mínusz vagy 0 sem a magasság, sem a sugár.")
     ablak=Toplevel(foablak)
